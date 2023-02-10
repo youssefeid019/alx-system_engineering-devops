@@ -1,0 +1,4 @@
+ls -A --group-directories-first --ignore='*~' | awk '
+  /^[^.]/ { printf "%s,", $0 }
+  /^[.]([^.]|)/ { printf "%s,", $0; next }
+  END { printf "\n" }
