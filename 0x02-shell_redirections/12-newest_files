@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -lt --time-style=long-iso | head -n 11 | tail -n +2
