@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -mindepth 1 -type d ! -name . -not \( -path ./.* -prune \) | wc -l | xargs echo "Number of directories (excluding current and parent directories):"
