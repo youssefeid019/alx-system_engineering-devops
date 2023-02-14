@@ -1,2 +1,14 @@
 #!/bin/bash
-find . -mindepth 1 -type d ! -name . -not \( -path ./.* -prune \) | wc -l | xargs echo"" 
+
+dir_count=0
+
+# Loop through all directories and sub-directories
+for dir in $(find . -type d); do
+  # Exclude current and parent directories
+  if [ "$dir" != "." ] && [ "$dir" != ".." ]; then
+    # Increment count
+    (( dir_count++ ))
+  fi
+done
+
+echo "Number of directories: $dir_count"
